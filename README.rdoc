@@ -1,0 +1,48 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+== Add carrierwave gem to gemfile
+gem 'carrierwave'
+
+== generate uploader
+$ rails g uploader avatar
+
+== generate user model
+$ rails g scaffold user name:string email:string avatar:string
+
+$ rake db:migrate
+
+--install nested_form file 
+$ rails g nested_form:install
+
+== gemerate article model
+$ rails g scaffold article title:string
+
+== generate photo model
+$ rails g model photo article:references file:string
