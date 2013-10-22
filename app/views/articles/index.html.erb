@@ -15,7 +15,7 @@
       <tr>
         <td><%= article.title %></td>
         <td>
-          <%= article.photos.each do |photo| %>
+          <% article.photos.each do |photo| %>
             <%= image_tag(photo.file.url, :heigh => 200, :width => 200) %>
           <% end %>
         </td>
