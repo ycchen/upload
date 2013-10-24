@@ -21,6 +21,6 @@ test:
 production:
   adapter: mysql2
   database: test
-  username: root@localhost
-  password:
+  username: root
+  password: admin
   
