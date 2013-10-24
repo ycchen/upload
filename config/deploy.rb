@@ -55,6 +55,12 @@ namespace :deploy do
     CMD
   end
 
+  before "deploy:restart", :symlink_directories
+  desc "Symlink shared/uploads folder"
+  task :symlink_directories do
+    run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
+  end
+
   desc "Restart applicaiton"
   task :restart do
     run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
