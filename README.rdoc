@@ -46,3 +46,6 @@ $ rails g scaffold article title:string
 
 == generate photo model
 $ rails g model photo article:references file:string
+
+== generate migration script to add website column to user model
+$ rails g migration add_website_to_user website:string
