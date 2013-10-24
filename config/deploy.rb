@@ -68,6 +68,6 @@ namespace :deploy do
 end
 
 #after "deploy", "deploy:symlink_config_files"
-before "deploy", "deploy:symlink_directories"
+after "deploy", "deploy:symlink_directories"
 after  "deploy", "deploy:restart"
 after  "deploy", "deploy:cleanup"
