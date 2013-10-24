@@ -20,7 +20,7 @@ test:
 
 production:
   adapter: mysql2
-  database: test
+  database: upload
   username: root
   password: admin
   
