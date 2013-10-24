@@ -11,7 +11,7 @@ set :user, "administrator"
 # set :scam_passphrase, "4Alludo!"
 set :use_sudo, false
 set :rails_env, "production"
-set :deploy_via, :remote_cache #:copy
+set :deploy_via, :copy
 set :ssh_options, {:forward_agent => true, :port => 22}
 set :keep_releases, 3
 default_run_options[:pty] = true
@@ -71,4 +71,4 @@ end
 #after "deploy", "deploy:symlink_config_files"
 after  "deploy", "deploy:symlink_directories"
 after  "deploy", "deploy:restart"
-after  "deploy", "deploy:cleanup
+after  "deploy", "deploy:cleanup"
