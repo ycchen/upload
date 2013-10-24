@@ -55,7 +55,7 @@ namespace :deploy do
     CMD
   end
 
-  before "deploy:restart", :symlink_directories
+  
   desc "Symlink shared/uploads folder"
   task :symlink_directories do
     run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
@@ -68,5 +68,6 @@ namespace :deploy do
 end
 
 #after "deploy", "deploy:symlink_config_files"
-after "deploy", "deploy:restart"
-after "deploy", "deploy:cleanup"
+before "deploy", "deploy:symlink_directories"
+after  "deploy", "deploy:restart"
+after  "deploy", "deploy:cleanup"
