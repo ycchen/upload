@@ -38,6 +38,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+	gem 'mysql2'
+end
+
 # Use carrierwave to upload file
 gem 'carrierwave'
 
